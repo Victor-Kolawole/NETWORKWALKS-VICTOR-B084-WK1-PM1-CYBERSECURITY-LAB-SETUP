@@ -1,9 +1,12 @@
-# NETWORKWALKS-VICTOR-B084-WK1-PM1-CYBERSECURITY-LAB-SETUP
+##     🔐 Cybersecurity Lab Environment Setup
+Building an isolated virtual lab for penetration testing and ethical hacking practice
+
+## 📌 Project Overview
 This project focuses on setting up a virtual cybersecurity and penetration-testing laboratory using VirtualBox and Kali Linux. The purpose of the lab is to create a controlled environment where cybersecurity tools, network scanning, reconnaissance, vulnerability assessment, and other security-testing activities can be performed safely and repeatedly.
 
 The lab is configured on a private virtual network so that additional machines can be added later and used as targets for authorized security testing.
 
-🎯 Objectives
+# 🎯 Objectives
 
 The main objectives of this project are to:
 
@@ -15,7 +18,7 @@ The main objectives of this project are to:
 
 - Configure network connectivity for Kali Linux.
 
-Assign a consistent IP address to the Kali VM.
+- Assign a consistent IP address to the Kali VM.
 
 - Verify network connectivity and DNS resolution.
 
@@ -25,7 +28,7 @@ Assign a consistent IP address to the Kali VM.
 
 - Prepare the environment for future cybersecurity projects.
 
-🛡️ Purpose of the Lab
+# 🛡️ Purpose of the Lab
 
 The lab provides an isolated and controlled environment for cybersecurity learning and authorized security testing.
 
