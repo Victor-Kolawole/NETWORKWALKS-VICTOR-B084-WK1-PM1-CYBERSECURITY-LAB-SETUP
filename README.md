@@ -102,10 +102,12 @@ The Kali Linux network configuration was checked and configured with a consisten
 
 Example configuration:
 
-- IP Address: 10.0.0.2
-- Subnet Mask: 255.255.255.0
-- Gateway: 10.0.0.1
-- DNS: 8.8.8.8
+`IP Address: 10.0.0.2
+ Subnet Mask: 255.255.255.0
+ Gateway: 10.0.0.1
+ DNS: 8.8.8.8`  
+
+
 
 A consistent IP address makes it easier to document the lab and reference the Kali machine in future exercises.
 <img width="1919" height="1027" alt="Screenshot Kali linuz network settings" src="https://github.com/user-attachments/assets/7f666dc4-b9a0-4bc6-a112-48ab282bed2e" />
@@ -115,7 +117,7 @@ After completing the initial configuration, a VirtualBox snapshot was created.
 
 Example snapshot name:
 
-- Clean Kali - Network Setup
+`Clean Kali - Network Setup` 
 
   The snapshot represents the clean baseline of the laboratory.
 
@@ -130,8 +132,9 @@ If a future exercise changes or damages the VM configuration, the machine can be
 |Test Internet connectivity|`ping 8.8.8.8`             |	Successful replies            |
 |Test DNS resolution       |`nslookup networkwalks.com`|Domain resolves|
 | Verify Nmap              |`nmap --version`           |Nmap version displayed                            |
-|Verify snapshot           |Restore snapshot and run 'ip a`   |    Baseline configuration restored          |
+|Verify snapshot           |Restore snapshot and run `ip a`    |    Baseline configuration restored          |
 
+## Example Results
 `IP Address:
 10.0.0.2/24
 
@@ -140,3 +143,32 @@ Gateway:
 
 DNS:
 8.8.8.8`  
+
+##  Problems Encountered & Solutions
+Documenting problems is an important part of the project.
+# Problem 1. Internet Connectivity After Static IP Configuration
+After manually configuring the IPv4 settings, Internet connectivity may fail depending on the Kali/NetworkManager configuration.
+
+One workaround used during this lab was:
+`sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0`
+The network connection was then restarted/rebooted and connectivity was tested again.
+
+Important: Network interface and connection names may differ between systems. Students should first identify their actual connection name before running an `nmcli` command.
+
+## Problem 2. VirtualBox VT-x / Virtualization Error
+The VM initially failed to start because hardware virtualization was disabled in the system firmware/BIOS.
+
+The issue was resolved by:
+- Restarting the computer.
+- Entering BIOS/UEFI settings.
+- Enabling Intel VT-x / hardware virtualization.
+- Saving the configuration.
+- Restarting the computer.
+- Starting the Kali VM again.
+After enabling virtualization, the VM started successfully.
+
+## 💡 What I Learned
+Through this project, I learned how to create and configure a virtual environment for cybersecurity practice.
+
+The most important concepts I learned include:
+
