@@ -52,7 +52,9 @@ It can be used for activities such as:
 
 This laboratory must only be used for systems that you own or have explicit permission to test. Do not use the lab or its tools to attack unauthorized systems.
 
-
+## 🏗️ Lab Architecture
+<img width="1346" height="616" alt="1-screenshot-title-image" src="https://github.com/user-attachments/assets/072a26ac-c435-4af2-a2cf-c8b203b8c6c5" />
+Additional target machines can be added to the same virtual network in future projects.
 
 # ⚙️ Lab Configuration
 
@@ -71,13 +73,18 @@ This laboratory must only be used for systems that you own or have explicit perm
 | 🚪 DNS Server | 8.8.8.8  |
 
 # 🛡️ Lab Setup Procedure
-## Step 1: Install VirtualBox
+## Step 1. Install 7-Zip
+7-Zip was installed to extract the Kali Linux virtual-machine package, which may be distributed as a .7z archive.
+
+Tool: 7-Zip
+
+## Step 2: Install VirtualBox
 
 Oracle VirtualBox was installed to run Kali Linux in a virtual machine without replacing the Windows host operating system.
 
 *Tool:* Oracle VirtualBox was installed as the hypervisor.
 
-## Step 2: Create the NAT Network
+## Step 3: Create the NAT Network
 
 A dedicated NAT Network was created in VirtualBox.
 
@@ -86,7 +93,7 @@ Configuration: Network Name: NatNetwork IPv4 Prefix: 10.0.0.0/24 DHCP: Enabled I
 A NAT Network was selected because multiple virtual machines connected to the same NAT Network can communicate with one another while also having outbound network connectivity.
 
 This will allow future attacker and target VMs to communicate within the lab.
-## Step 3: Import Kali Linux
+## Step 4: Import Kali Linux
 The Kali Linux virtual machine was downloaded from the official Kali Linux website and imported into VirtualBox.
 
 The VM network adapter was configured as follows:
@@ -99,7 +106,7 @@ The VM network adapter was configured as follows:
  <img width="1919" height="939" alt="Screenshot Kali-linux" src="https://github.com/user-attachments/assets/4e38e2fa-902c-40bf-ae3a-5ff55759b032" />
 A shared folder was also configured for transferring required files between the host operating system and the Kali VM.
 
-## Step 4: Configure the Kali Linux Network
+## Step 5: Configure the Kali Linux Network
 
 The Kali Linux network configuration was checked and configured with a consistent IPv4 address.
 
@@ -115,7 +122,7 @@ Example configuration:
 A consistent IP address makes it easier to document the lab and reference the Kali machine in future exercises.
 <img width="1919" height="1027" alt="Screenshot Kali linuz network settings" src="https://github.com/user-attachments/assets/7f666dc4-b9a0-4bc6-a112-48ab282bed2e" />
 
-## Step 5: Verify Network Connectivity
+## Step 5: Create a Clean VM Snapshot
 After completing the initial configuration, a VirtualBox snapshot was created.
 
 Example snapshot name:
